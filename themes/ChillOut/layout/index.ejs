@@ -1,0 +1,35 @@
+<div class='row text-center'>
+  <h1><%= config.title %></h1>
+  <h3><%= config.subtitle %></h3>
+</div>
+<div class="container">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet aliquam ipsum. Aenean volutpat, nisi accumsan cursus malesuada, turpis mi sagittis nisi, et tincidunt nulla tellus ut nulla. Maecenas hendrerit vestibulum felis, sit amet viverra diam dignissim in. Nulla commodo sapien quis lorem scelerisque lacinia. Suspendisse potenti. Maecenas id dui tellus. Nullam malesuada in mauris ac tempor. Nam quis risus non dolor vulputate aliquet at eget massa. Nam vel lectus eget ante dignissim facilisis. In eros nibh, feugiat et placerat in, porttitor cursus tortor. Cras ornare malesuada mi cursus blandit. Vestibulum condimentum lectus efficitur purus suscipit, ut consequat tortor pellentesque. Phasellus lacinia leo eget tortor commodo, eu aliquam felis lacinia. Fusce in nisl sapien. Fusce placerat bibendum massa, non mollis leo sodales ac. Aliquam ut lobortis risus.</p>
+</div>
+<div class="container">
+  <hr></hr>
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search for...">
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="button">Go!</button>
+    </span>
+  </div><!-- /input-group -->
+</div><!-- /.col-lg-6 -->
+<div class="container">
+  <ul class="col-9">
+  <% page.posts.each(function(post){ %>
+    <li>
+    <h3>
+      <a href="<%- url_for(post.path) %>">
+      <%= post.title %>
+      </a>
+    </h3>
+    <% if(post.excerpt) { %>
+    <p>
+      <%- post.excerpt %>
+    </p>
+      <% } %>
+    </li>
+    <% }) %>
+  </ul>
+  <hr></hr>
+</div>
